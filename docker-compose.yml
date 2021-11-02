@@ -1,0 +1,41 @@
+version: "3"
+services:
+  amplify:
+    build:
+      context: ./amplify
+    image: amplify-cli
+    container_name: amplify-cli
+
+  angular:
+    build:
+      context: ./angular
+    image: angular-cli
+    container_name: angular-cli
+
+  eb:
+    build:
+      context: ./eb
+    image: eb-cli
+    container_name: eb-cli
+
+  node:
+    build:
+      context: ./node
+    image: node-cli
+    container_name: node-cli
+
+  ubuntu:
+    build:
+      context: ./ubuntu
+    image: ubuntu-cli
+    container_name: ubuntu-cli
+    restart: on-failure
+    command: ["sleep", "infinity"]
+    volumes:
+      - ~/.bash_history:/root/.bash_history
+
+  yarn:
+    build:
+      context: ./yarn
+    image: yarn-cli
+    container_name: yarn-cli

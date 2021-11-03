@@ -38,6 +38,21 @@ Elastic Beanstalk CLI
 ----
 Elastic Beanstalk installed on top of Node JS image.
 
+Git Secrets
+----
+
+https://github.com/awslabs/git-secrets
+
+Install git hooks to the current directory:
+```
+docker run --rm  -v "$PWD":/app -it git-secrets-cli --install
+```
+
+Scan all files in the repo:
+```
+docker run --rm  -v "$PWD":/app -it git-secrets-cli --scan
+```
+
 Node JS
 ----
 https://hub.docker.com/_/node
@@ -49,3 +64,4 @@ https://hub.docker.com/_/ubuntu
 Yarn
 ----
 Yarn installed on top of Node JS image.
+

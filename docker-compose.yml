@@ -18,6 +18,12 @@ services:
     image: eb-cli
     container_name: eb-cli
 
+  git-secrets:
+    build:
+      context: ./git-secrets
+    image: git-secrets-cli
+    container_name: git-secrets-cli
+
   node:
     build:
       context: ./node

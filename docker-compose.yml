@@ -12,6 +12,12 @@ services:
     image: angular-cli
     container_name: angular-cli
 
+  composer:
+    build:
+      context: ./composer
+    image: composer-cli
+    container_name: composer-cli
+
   eb:
     build:
       context: ./eb
@@ -38,6 +44,7 @@ services:
     restart: on-failure
     command: ["sleep", "infinity"]
     volumes:
+      - ~/.aws:/root/.aws
       - ~/.bash_history:/root/.bash_history
 
   yarn:
@@ -45,3 +52,7 @@ services:
       context: ./yarn
     image: yarn-cli
     container_name: yarn-cli
+
+volumes:
+  ubuntu:
+    driver: local

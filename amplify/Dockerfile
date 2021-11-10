@@ -8,3 +8,5 @@ RUN ./install-packages.sh
 ARG APP_DIR="/app"
 WORKDIR $APP_DIR
 ENTRYPOINT ["amplify"]
+
+#EXPOSE 4242
